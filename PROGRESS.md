@@ -6,7 +6,7 @@
 ## Phase status
 | Phase | Status | Gate evidence (test cmd + result) | Commit |
 |-------|--------|-----------------------------------|--------|
-| 1     | done   | `pytest tests/ -v` — 18 passed in 1.00s; `mypy --strict src tests` — Success: no issues found in 4 source files; `ruff check .` — All checks passed. See details below. | (pending) |
+| 1     | done   | `pytest tests/ -v` — 18 passed in 1.00s; `mypy --strict src tests` — Success: no issues found in 4 source files; `ruff check .` — All checks passed. See details below. | 8b0d8e2 |
 | 2     | todo   |                                   |        |
 | 3     | todo   |                                   |        |
 | 4     | todo   |                                   |        |
