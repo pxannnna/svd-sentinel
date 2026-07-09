@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+  <name>TESTDEV</name>
+  <version>1.0</version>
+  <description>test device</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <resetValue>0</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+  <peripherals>
+    <peripheral>
+      <name>TESTP</name>
+      <description>test peripheral</description>
+      <baseAddress>0x40000000</baseAddress>
+      <registers>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>CH[%s]</name>
+          <description>channel register</description>
+          <addressOffset>0x0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+        </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>

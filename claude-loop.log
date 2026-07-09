@@ -1,2 +1,9 @@
 [2026-07-09 21:05:36] ERROR: no *_SPEC.md file found in /Users/anna_petrusenko/Documents/Documents /Projects/svd-sentinel.
 [2026-07-09 21:06:45] ERROR: PROGRESS.md missing. Copy the template from the kit.
+[2026-07-09 21:09:01] === claude-loop.sh starting: spec=2_SVD_SENTINEL_SPEC.md model=sonnet stopAtCheckpoints=1 max=80 ===
+[2026-07-09 21:09:01] --- Iteration 1 ---
+[2026-07-09 21:09:01] Exit code: 1
+[2026-07-09 21:09:01] Output (tail): 
+[2026-07-09 21:09:01] Non-zero exit (1) without limit message — possible crash. Sleeping 120s, retrying.
+[2026-07-09 21:19:20] === claude-loop.sh starting: spec=2_SVD_SENTINEL_SPEC.md model=sonnet stopAtCheckpoints=1 max=80 ===
+[2026-07-09 21:19:20] --- Iteration 1 ---
