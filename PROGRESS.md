@@ -1,4 +1,4 @@
-# PROGRESS.md — <PROJECT NAME>
+# PROGRESS.md — <SVD-SENTINEL>
 
 > Maintained by the coding agent. This is the first thing the reviewer reads.
 > Keep entries short and factual. Phase names/numbers come from the *_SPEC.md.
