@@ -40,6 +40,18 @@ Status values: `todo` / `in-progress` / `done` / `blocked`
 
 ## Session log
 <!-- One short entry per session/resume, newest first. -->
+- 2026-07-11 — Applied REVIEW.md fix #1 (per LOOP_ADAPTER.md, review fixes
+  take priority over starting a new phase): removed the two silent
+  fallbacks in `loader.py::_convert_register`
+  (`reset_value or 0`, `reset_mask ... else 0xFFFFFFFF`); now raises
+  `ValueError` naming the register's `source_ref` if either is `None`
+  after cmsis_svd inheritance resolution. Verified: grep for the fallback
+  patterns returns nothing; `pytest tests/ -v` — 18 passed; `mypy --strict
+  src tests` — Success; `ruff check .` — All checks passed. Marked fix
+  `done` in REVIEW.md. Noted rulings R1 (S004 needs a synthetic companion
+  SVD, not injected into the real device model) and R2 (UNKNOWN access
+  registers must not upgrade to read-write by default) to apply starting
+  Phase 2/4. Next: Phase 2 (constraint compiler).
 - 2026-07-09 21:35 — Phase 1 complete. Set up repo (pyproject.toml, venv via
   Homebrew python@3.12 since system python was 3.10), fetched and pinned
   STM32F407.svd, wrote `src/svdsentinel/model/{__init__,loader}.py`

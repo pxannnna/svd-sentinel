@@ -114,14 +114,18 @@ def _convert_field(svd_field: Any, register_ref: str) -> Field:
 def _convert_register(svd_register: Any, peripheral_ref: str) -> Register:
     ref = f"{peripheral_ref}/registers/register[name='{svd_register.name}']"
     fields = _flatten(svd_register.fields, _FIELD_WRAPPER_ATTRS)
+    if svd_register.reset_value is None:
+        raise ValueError(f"{ref}: no resetValue found in SVD inheritance chain (device/peripheral/register)")
+    if svd_register.reset_mask is None:
+        raise ValueError(f"{ref}: no resetMask found in SVD inheritance chain (device/peripheral/register)")
     return Register(
         name=svd_register.name,
         description=svd_register.description,
         address_offset=svd_register.address_offset,
         size=svd_register.size,
         access=_map_access(svd_register.access),
-        reset_value=svd_register.reset_value or 0,
-        reset_mask=svd_register.reset_mask if svd_register.reset_mask is not None else 0xFFFFFFFF,
+        reset_value=svd_register.reset_value,
+        reset_mask=svd_register.reset_mask,
         fields=tuple(_convert_field(f, ref) for f in fields),
         source_ref=ref,
     )
